@@ -1,5 +1,5 @@
 function App() {
-  return <h1>Ortodent</h1>;
+  return <h1 className="text-3xl">Ortodent</h1>;
 }
 
 export default App;

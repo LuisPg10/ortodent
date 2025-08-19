@@ -1,5 +1,7 @@
+import { MainPage } from './pages/MainPage';
+
 function App() {
-  return <h1 className="text-3xl">Ortodent</h1>;
+  return <MainPage />;
 }
 
 export default App;

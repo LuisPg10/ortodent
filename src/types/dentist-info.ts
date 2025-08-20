@@ -1,7 +1,7 @@
-export interface ContactDentist {
+export interface DentistInfo {
   title: string;
   name: string;
-  info: string;
+  info: string[];
   message?: string;
   image: string;
 }

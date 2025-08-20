@@ -1,17 +1,4 @@
 import {
-  Button,
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  Header,
-} from '@/components/ui';
-
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { contactContent } from '@/data/sections/contact-content';
-import {
   Phone,
   Mail,
   MapPin,
@@ -25,42 +12,27 @@ import {
   Play,
 } from 'lucide-react';
 
+import {
+  Button,
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  Header,
+} from '@/components/ui';
+import { HeroSection } from '@/components/sections';
+
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { contactContent } from '@/data/sections/contact-content';
+
 export const MainPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Hero Section */}
-      <section
-        id="inicio"
-        className="py-20 bg-gradient-to-br from-background to-muted"
-      >
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold font-serif text-foreground mb-6">
-            Cuidamos tu Sonrisa con{' '}
-            <span className="text-primary">Excelencia</span>
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Brindamos servicios dentales de alta calidad con tecnología avanzada
-            y un equipo profesional comprometido con tu bienestar.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground"
-            >
-              Agendar Consulta
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-            >
-              Conocer Servicios
-            </Button>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       {/* Services Section */}
       <section id="servicios" className="py-20 bg-background">

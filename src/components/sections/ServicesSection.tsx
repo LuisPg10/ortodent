@@ -3,7 +3,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '../ui/card';
 
 export const ServicesSection = () => {
   return (
-    <section id="servicios" className="bg-background px-10 py-20">
+    <section id="servicios" className="bg-background py-20 sm:px-0 md:px-10">
       <div className="container mx-auto px-4">
         <div className="mb-16 text-center">
           <h2 className="text-foreground mb-4 font-serif text-3xl font-bold md:text-4xl">

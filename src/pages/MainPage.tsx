@@ -3,9 +3,6 @@ import {
   Mail,
   MapPin,
   Clock,
-  Star,
-  Heart,
-  Shield,
   Smile,
   ChevronLeft,
   ChevronRight,
@@ -21,7 +18,8 @@ import {
   CardTitle,
   Header,
 } from '@/components/ui';
-import { HeroSection } from '@/components/sections';
+
+import { HeroSection, ServicesSection } from '@/components/sections';
 
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -34,112 +32,7 @@ export const MainPage = () => {
 
       <HeroSection />
 
-      {/* Services Section */}
-      <section id="servicios" className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold font-serif text-foreground mb-4">
-              Nuestros Servicios
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Ofrecemos una amplia gama de tratamientos dentales para cuidar tu
-              salud bucal y mejorar tu sonrisa.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="bg-card border-border hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Heart className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle className="text-xl font-serif text-card-foreground">
-                  Odontología General
-                </CardTitle>
-                <CardDescription className="text-muted-foreground">
-                  Cuidado integral de tu salud bucal con revisiones, limpiezas y
-                  tratamientos preventivos.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="bg-card border-border hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Shield className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle className="text-xl font-serif text-card-foreground">
-                  Ortodoncia
-                </CardTitle>
-                <CardDescription className="text-muted-foreground">
-                  Corrección de la posición de los dientes con brackets
-                  tradicionales y ortodoncia invisible.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="bg-card border-border hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Star className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle className="text-xl font-serif text-card-foreground">
-                  Implantes Dentales
-                </CardTitle>
-                <CardDescription className="text-muted-foreground">
-                  Reemplazo de dientes perdidos con implantes de titanio de alta
-                  calidad y durabilidad.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="bg-card border-border hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Smile className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle className="text-xl font-serif text-card-foreground">
-                  Estética Dental
-                </CardTitle>
-                <CardDescription className="text-muted-foreground">
-                  Blanqueamientos, carillas y tratamientos para mejorar la
-                  apariencia de tu sonrisa.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="bg-card border-border hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Heart className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle className="text-xl font-serif text-card-foreground">
-                  Endodoncia
-                </CardTitle>
-                <CardDescription className="text-muted-foreground">
-                  Tratamiento de conductos radiculares para salvar dientes
-                  dañados o infectados.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="bg-card border-border hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Shield className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle className="text-xl font-serif text-card-foreground">
-                  Periodoncia
-                </CardTitle>
-                <CardDescription className="text-muted-foreground">
-                  Tratamiento especializado de las encías y estructuras de
-                  soporte de los dientes.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          </div>
-        </div>
-      </section>
+      <ServicesSection />
 
       {/* About Founder Section */}
       <section id="fundadora" className="py-20 bg-muted">

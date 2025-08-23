@@ -1,5 +1,5 @@
 import { Pause, Play } from 'lucide-react';
-import { useVideo } from '@/hooks/useVideo';
+import { useMobile, useVideo } from '@/hooks';
 
 interface Props {
   src: string;
@@ -9,11 +9,13 @@ interface Props {
 
 export const VideoCard = ({ src, title, description }: Props) => {
   const { videoRef, videoState, handleMouseMove, togglePause } = useVideo();
+  const { isMobile } = useMobile();
 
   return (
     <article className="from-primary/30 to-primary/20 relative h-[480px] w-80 scale-100 transform overflow-hidden rounded-2xl bg-gradient-to-br shadow-2xl transition-all duration-300">
       <video
         ref={videoRef}
+        onClick={isMobile ? handleMouseMove : undefined}
         onMouseMove={handleMouseMove}
         autoPlay
         className="h-full w-full object-cover"

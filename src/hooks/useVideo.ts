@@ -9,13 +9,15 @@ export const useVideo = () => {
     isPlaying: true,
   });
 
-  const handleMouseMove = async () => {
-    if (!videoState.isHover) setVideoState({ ...videoState, isHover: true });
+  const handleMouseMove = () => {
+    if (!videoState.isHover) {
+      setVideoState((prev) => ({ ...prev, isHover: true }));
+    }
 
     if (timer) clearTimeout(timer);
 
     timer = setTimeout(() => {
-      setVideoState({ ...videoState, isHover: false });
+      setVideoState((prev) => ({ ...prev, isHover: false }));
     }, 1000);
   };
 
@@ -24,12 +26,12 @@ export const useVideo = () => {
 
     if (videoRef.current?.paused) {
       videoRef.current.play();
-      setVideoState({ ...videoState, isPlaying: true });
+      setVideoState((prev) => ({ ...prev, isPlaying: true }));
       return;
     }
 
     videoRef.current?.pause();
-    setVideoState({ ...videoState, isPlaying: false });
+    setVideoState((prev) => ({ ...prev, isPlaying: false }));
   };
 
   return {

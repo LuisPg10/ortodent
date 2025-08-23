@@ -1,9 +1,9 @@
 import { type MouseEvent, useRef, useState } from 'react';
 
-let timer: NodeJS.Timeout | null; //? Para evitar el salto del wrapper
-
 export const useVideo = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
   const [videoState, setVideoState] = useState({
     isHover: false,
     isPlaying: true,
@@ -14,9 +14,9 @@ export const useVideo = () => {
       setVideoState((prev) => ({ ...prev, isHover: true }));
     }
 
-    if (timer) clearTimeout(timer);
+    if (timerRef.current) clearTimeout(timerRef.current);
 
-    timer = setTimeout(() => {
+    timerRef.current = setTimeout(() => {
       setVideoState((prev) => ({ ...prev, isHover: false }));
     }, 1000);
   };

@@ -1,7 +1,5 @@
-import { type MouseEvent, useState } from 'react';
-import { Pause } from 'lucide-react';
-
-import { delay } from '@/lib/time';
+import { Pause, Play } from 'lucide-react';
+import { useVideo } from '@/hooks/useVideo';
 
 interface Props {
   src: string;
@@ -10,19 +8,12 @@ interface Props {
 }
 
 export const VideoCard = ({ src, title, description }: Props) => {
-  const [isHover, setIsHover] = useState(false);
-
-  const handleMouseMove = async (
-    event: MouseEvent<HTMLVideoElement, globalThis.MouseEvent>
-  ) => {
-    if (event.isTrusted && !isHover) setIsHover(true);
-    await delay(2000);
-    setIsHover(false);
-  };
+  const { videoRef, videoState, handleMouseMove, togglePause } = useVideo();
 
   return (
     <article className="from-primary/30 to-primary/20 relative h-[480px] w-80 scale-100 transform overflow-hidden rounded-2xl bg-gradient-to-br shadow-2xl transition-all duration-300">
       <video
+        ref={videoRef}
         onMouseMove={handleMouseMove}
         autoPlay
         className="h-full w-full object-cover"
@@ -33,11 +24,18 @@ export const VideoCard = ({ src, title, description }: Props) => {
         Este video no es compatible con tu navegador
       </video>
 
-      {isHover && (
-        <div>
+      {videoState.isHover && (
+        <div onMouseMove={handleMouseMove} onClick={togglePause}>
           <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-            <button className="flex h-16 w-16 cursor-pointer items-center justify-center rounded-full bg-white/90">
-              <Pause className="text-primary ml-1 h-8 w-8" />
+            <button
+              onClick={togglePause}
+              className="flex h-16 w-16 cursor-pointer items-center justify-center rounded-full bg-white/90"
+            >
+              {videoState.isPlaying ? (
+                <Pause className="text-primary ml-1 h-8 w-8" />
+              ) : (
+                <Play className="text-primary ml-1 h-8 w-8" />
+              )}
             </button>
           </div>
 

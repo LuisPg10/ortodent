@@ -44,7 +44,7 @@ export const VideosSection = () => {
         <Carousel
           setApi={setApi}
           opts={{ loop: true, align: 'center' }}
-          className="mx-auto max-w-3xl"
+          className="mx-auto max-w-4xl"
         >
           <CarouselContent>
             {videos.map((video, i) => {
@@ -53,9 +53,13 @@ export const VideosSection = () => {
               return (
                 <CarouselItem
                   key={video.id}
-                  className="flex justify-center sm:basis-1/2"
+                  className="flex justify-center sm:basis-2/3 md:basis-1/3"
                 >
-                  <VideoCard isActive={isActive} {...video} />
+                  <VideoCard
+                    onClick={() => api?.scrollTo(i)}
+                    isActive={isActive}
+                    {...video}
+                  />
                 </CarouselItem>
               );
             })}

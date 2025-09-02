@@ -1,7 +1,7 @@
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 import { Card, CardContent } from '../ui';
-import { ContactForm } from '../forms/ContactForm';
+import { ContactForm } from '../contact/ContactForm';
 
 export const ContactSection = () => {
   return (

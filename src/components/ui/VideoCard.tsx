@@ -1,23 +1,39 @@
 import { Pause, Play } from 'lucide-react';
 import { useMobile, useVideo } from '@/hooks';
+import { cn } from '@/lib/utils';
 
-interface Props {
+interface Props extends React.ComponentProps<'article'> {
   src: string;
   title: string;
   description: string;
+  isActive?: boolean;
+  className?: string;
 }
 
-export const VideoCard = ({ src, title, description }: Props) => {
-  const { videoRef, videoState, handleMouseMove, togglePause } = useVideo();
+export const VideoCard = ({
+  src,
+  title,
+  description,
+  isActive = true,
+  className,
+  ...articleProps
+}: Props) => {
   const { isMobile } = useMobile();
+  const { videoRef, videoState, handleMouseMove, togglePause } =
+    useVideo(isActive);
 
   return (
-    <article className="from-primary/30 to-primary/20 relative h-[480px] w-80 scale-100 transform overflow-hidden rounded-2xl bg-gradient-to-br shadow-2xl transition-all duration-300">
+    <article
+      {...articleProps}
+      className={cn(
+        `from-primary/30 to-primary/20 relative h-[480px] w-80 scale-100 transform overflow-hidden rounded-2xl bg-gradient-to-br shadow-2xl`,
+        className
+      )}
+    >
       <video
         ref={videoRef}
         onClick={isMobile ? handleMouseMove : undefined}
         onMouseMove={handleMouseMove}
-        autoPlay
         className="h-full w-full object-cover"
         loop
         muted
@@ -26,7 +42,7 @@ export const VideoCard = ({ src, title, description }: Props) => {
         Este video no es compatible con tu navegador
       </video>
 
-      {videoState.isHover && (
+      {videoState.isHover && isActive && (
         <div onMouseMove={handleMouseMove} onClick={togglePause}>
           <div className="absolute inset-0 flex items-center justify-center bg-black/20">
             <button

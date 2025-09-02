@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 
-export const useMobile = () => {
+export const useMobile = (screenSize: number = 768) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= screenSize);
     };
 
     checkScreenSize();

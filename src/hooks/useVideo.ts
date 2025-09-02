@@ -1,13 +1,25 @@
-import { type MouseEvent, useRef, useState } from 'react';
+import { type MouseEvent, useEffect, useRef, useState } from 'react';
 
-export const useVideo = () => {
+export const useVideo = (isActive: boolean = true) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const [videoState, setVideoState] = useState({
     isHover: false,
-    isPlaying: true,
+    isPlaying: isActive,
+    isActive,
   });
+
+  useEffect(() => {
+    if (videoRef.current) {
+      if (isActive) {
+        handlePlay();
+        return;
+      }
+
+      handlePause();
+    }
+  }, [isActive]);
 
   const handleMouseMove = () => {
     if (!videoState.isHover) {
@@ -21,17 +33,25 @@ export const useVideo = () => {
     }, 1000);
   };
 
+  const handlePlay = () => {
+    videoRef.current?.play();
+    setVideoState((prev) => ({ ...prev, isPlaying: true }));
+  };
+
+  const handlePause = () => {
+    videoRef.current?.pause();
+    setVideoState((prev) => ({ ...prev, isPlaying: false }));
+  };
+
   const togglePause = (event: MouseEvent<HTMLElement>) => {
     event.stopPropagation();
 
     if (videoRef.current?.paused) {
-      videoRef.current.play();
-      setVideoState((prev) => ({ ...prev, isPlaying: true }));
+      handlePlay();
       return;
     }
 
-    videoRef.current?.pause();
-    setVideoState((prev) => ({ ...prev, isPlaying: false }));
+    handlePause();
   };
 
   return {
@@ -39,6 +59,8 @@ export const useVideo = () => {
     videoState,
 
     handleMouseMove,
+    handlePause,
+    handlePlay,
     togglePause,
   };
 };

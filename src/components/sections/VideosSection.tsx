@@ -1,7 +1,33 @@
+import { useEffect, useState } from 'react';
+import { useMobile } from '@/hooks';
+
 import { videos } from '@/data/sections/video-section-content';
+
 import { VideoCard } from '../ui/VideoCard';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from '../ui/carousel';
 
 export const VideosSection = () => {
+  const [api, setApi] = useState<CarouselApi>();
+  const [currentVideo, setCurrentVideo] = useState(0);
+  const { isMobile } = useMobile(870);
+
+  useEffect(() => {
+    if (!api) return;
+
+    setCurrentVideo(api.selectedScrollSnap() + 1);
+
+    api.on('select', () => {
+      setCurrentVideo(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
+
   return (
     <section className="bg-background py-20">
       <div className="container mx-auto px-4">
@@ -15,13 +41,45 @@ export const VideosSection = () => {
           </p>
         </div>
 
-        <div className="relative mx-auto max-w-6xl">
-          <div className="flex items-center justify-center space-x-4 overflow-hidden">
-            {videos.map((video) => (
-              <VideoCard key={video.id} {...video} />
+        <Carousel
+          setApi={setApi}
+          opts={{ loop: true, align: 'center' }}
+          className="mx-auto max-w-3xl"
+        >
+          <CarouselContent>
+            {videos.map((video, i) => {
+              const isActive = currentVideo === i + 1;
+
+              return (
+                <CarouselItem
+                  key={video.id}
+                  className="flex justify-center sm:basis-1/2"
+                >
+                  <VideoCard isActive={isActive} {...video} />
+                </CarouselItem>
+              );
+            })}
+          </CarouselContent>
+
+          {!isMobile && (
+            <>
+              <CarouselPrevious />
+              <CarouselNext />
+            </>
+          )}
+
+          <div className="mt-5 flex justify-center gap-2">
+            {Array.from({ length: videos.length }).map((_, i) => (
+              <span
+                key={i}
+                onClick={() => api?.scrollTo(i)}
+                className={`${
+                  currentVideo === i + 1 ? 'bg-primary' : 'bg-gray-500'
+                } size-2 cursor-pointer rounded-full transition-colors`}
+              ></span>
             ))}
           </div>
-        </div>
+        </Carousel>
       </div>
     </section>
   );

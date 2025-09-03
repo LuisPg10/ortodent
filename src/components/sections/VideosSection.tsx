@@ -29,7 +29,7 @@ export const VideosSection = () => {
   }, [api]);
 
   return (
-    <section className="bg-background py-20">
+    <section id="tratamientos" className="bg-background py-20">
       <div className="container mx-auto px-4">
         <div className="mb-16 text-center">
           <h2 className="text-foreground mb-4 font-serif text-3xl font-bold md:text-4xl">

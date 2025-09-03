@@ -22,7 +22,7 @@ export const CustomList = ({
         {listInfo.map((item, i) => (
           <li key={i}>
             <a
-              href="#"
+              href={item.link}
               className={cn(
                 'text-background/80 hover:text-primary transition-colors',
                 itemStyle

@@ -1,4 +1,4 @@
-import { Header } from '@/components/ui';
+import { HeaderContent } from '@/components/ui';
 import {
   ContactSection,
   HeroSection,
@@ -11,7 +11,9 @@ import { FooterInfo } from '@/components/footer';
 export const MainPage = () => {
   return (
     <div className="bg-background min-h-screen">
-      <Header />
+      <header className="border-border bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 border-b backdrop-blur">
+        <HeaderContent />
+      </header>
 
       <main>
         <HeroSection />

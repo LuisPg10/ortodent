@@ -1,8 +1,11 @@
+import { cn } from '@/lib/utils';
+import type { ClassValue } from 'clsx';
 import type { LinkItem } from '@/types/link-item';
 
 interface Props {
   title?: string;
   listInfo?: LinkItem[];
+  itemStyle?: ClassValue;
   horizontal?: boolean;
 }
 
@@ -10,6 +13,7 @@ export const CustomList = ({
   title,
   listInfo = [],
   horizontal = true,
+  itemStyle,
 }: Props) => {
   return (
     <div>
@@ -19,7 +23,10 @@ export const CustomList = ({
           <li key={i}>
             <a
               href="#"
-              className="text-background/80 hover:text-primary transition-colors"
+              className={cn(
+                'text-background/80 hover:text-primary transition-colors',
+                itemStyle
+              )}
             >
               {item.title}
             </a>

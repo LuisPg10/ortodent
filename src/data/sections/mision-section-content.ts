@@ -1,8 +1,8 @@
 import type { ImageGalleryItem } from '@/types/image-gallery-item';
 
-import andymv from '../../assets/images/andymv.webp';
+import andymv from '../../assets/images/andymv.jpg';
 import tartinationTreatment from '../../assets/images/tartination-treatment.jpeg';
-import danylani from '../../assets/images/danylani.webp';
+import danylani from '../../assets/images/danylani.jpg';
 import dentalWhitening from '../../assets/images/dental-whitening.jpeg';
 
 export const misionImageGallery: ImageGalleryItem[] = [

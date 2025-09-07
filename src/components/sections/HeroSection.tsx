@@ -1,3 +1,4 @@
+import { motion } from 'motion/react';
 import { Button } from '../ui/button';
 
 export const HeroSection = () => {
@@ -6,11 +7,17 @@ export const HeroSection = () => {
       id="inicio"
       className="from-background to-muted bg-gradient-to-br py-52"
     >
-      <div className="container mx-auto px-4 text-center">
+      <motion.div
+        initial={{ opacity: 0, x: -70 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1 }}
+        className="container mx-auto px-4 text-center"
+      >
         <p className="text-foreground mb-6 font-serif text-4xl font-bold md:text-6xl">
           Cuidamos tu Sonrisa con{' '}
           <span className="text-primary">Excelencia</span>
         </p>
+
         <p className="text-muted-foreground mx-auto mb-8 max-w-2xl text-xl">
           Brindamos servicios dentales de alta calidad con tecnología avanzada y
           un equipo profesional comprometido con tu bienestar.
@@ -31,7 +38,7 @@ export const HeroSection = () => {
             Conocer Servicios
           </Button>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

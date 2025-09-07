@@ -1,3 +1,4 @@
+import { motion } from 'motion/react';
 import { servicesSectionContent } from '@/data/sections/services-section-content';
 import { Card, CardDescription, CardHeader, CardTitle } from '../ui/card';
 
@@ -15,7 +16,13 @@ export const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+        >
           {servicesSectionContent.map((info, i) => (
             <Card
               key={i}
@@ -34,7 +41,7 @@ export const ServicesSection = () => {
               </CardHeader>
             </Card>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

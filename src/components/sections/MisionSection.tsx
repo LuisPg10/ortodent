@@ -1,3 +1,5 @@
+import { motion } from 'motion/react';
+import { useMobile } from '@/hooks';
 import {
   compromises,
   misionImageGallery,
@@ -5,15 +7,23 @@ import {
 import { Button, PinterestGallery } from '../ui';
 
 export const MisionSection = () => {
+  const { isMobile } = useMobile();
+
   return (
     <section id="mision" className="bg-background py-20">
       <div className="container mx-auto px-4">
-        <div className="grid items-center gap-16 lg:grid-cols-2">
+        <div className="grid items-center gap-16 overflow-hidden lg:grid-cols-2">
           {/* Pinterest-style Gallery */}
           <PinterestGallery columns={2} images={misionImageGallery} />
 
           {/* Inspirational Message */}
-          <div className="space-y-8">
+          <motion.div
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: isMobile ? 0.2 : 0.5 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="space-y-8"
+          >
             <div>
               <h2 className="text-foreground mb-6 font-serif text-3xl font-bold text-balance md:text-4xl">
                 Tu Sonrisa es Nuestra{' '}
@@ -53,7 +63,7 @@ export const MisionSection = () => {
             >
               Conoce Más Sobre Nosotros
             </Button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

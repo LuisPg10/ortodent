@@ -3,5 +3,6 @@ export * from './card';
 export * from './carousel';
 export * from './HeaderContent';
 export * from './input';
+export * from './PinterestGallery';
 export * from './textarea';
 export * from './VideoCard';

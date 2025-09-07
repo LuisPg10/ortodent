@@ -2,6 +2,7 @@ import { HeaderContent } from '@/components/ui';
 import {
   ContactSection,
   HeroSection,
+  MisionSection,
   ServicesSection,
   TeamSection,
   VideosSection,
@@ -17,6 +18,8 @@ export const MainPage = () => {
 
       <main>
         <HeroSection />
+
+        <MisionSection />
 
         <ServicesSection />
 

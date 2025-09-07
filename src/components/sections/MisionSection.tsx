@@ -1,4 +1,7 @@
-import { misionImageGallery } from '@/data/sections/mision-section-content';
+import {
+  compromises,
+  misionImageGallery,
+} from '@/data/sections/mision-section-content';
 import { Button, PinterestGallery } from '../ui';
 
 export const MisionSection = () => {
@@ -35,26 +38,12 @@ export const MisionSection = () => {
                 Nuestro Compromiso
               </h3>
               <ul className="text-muted-foreground space-y-3">
-                <li className="flex items-start space-x-3">
-                  <div className="bg-primary mt-2 h-2 w-2 flex-shrink-0 rounded-full"></div>
-                  <span>Atención personalizada para cada paciente</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <div className="bg-primary mt-2 h-2 w-2 flex-shrink-0 rounded-full"></div>
-                  <span>
-                    Tecnología de vanguardia en todos nuestros tratamientos
-                  </span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <div className="bg-primary mt-2 h-2 w-2 flex-shrink-0 rounded-full"></div>
-                  <span>
-                    Ambiente cálido y profesional para tu tranquilidad
-                  </span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <div className="bg-primary mt-2 h-2 w-2 flex-shrink-0 rounded-full"></div>
-                  <span>Resultados duraderos que superan tus expectativas</span>
-                </li>
+                {compromises.map((compromise, i) => (
+                  <li key={i} className="flex items-start space-x-3">
+                    <div className="bg-primary mt-2 h-2 w-2 flex-shrink-0 rounded-full"></div>
+                    <span>{compromise}</span>
+                  </li>
+                ))}
               </ul>
             </div>
 

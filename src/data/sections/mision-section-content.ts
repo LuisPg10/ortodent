@@ -23,3 +23,10 @@ export const misionImageGallery: ImageGalleryItem[] = [
     alt: 'Paciente disfrutando de la naturaleza con una bella sonrisa',
   },
 ];
+
+export const compromises: string[] = [
+  ' Atención personalizada para cada paciente',
+  'Tecnología de vanguardia en todos nuestros tratamientos',
+  'Ambiente cálido y profesional para tu tranquilidad',
+  'Resultados duraderos que superan tus expectativas',
+];

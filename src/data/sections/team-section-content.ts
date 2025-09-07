@@ -1,5 +1,5 @@
 import type { DentistInfo } from '@/types/dentist-info';
-import mainDentist from '../../assets/main-dentist.webp';
+import mainDentist from '../../assets/images/team/main-dentist.webp';
 
 export const teamContent: DentistInfo[] = [
   {

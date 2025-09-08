@@ -5,7 +5,7 @@ import {
   CardTitle,
   CardDescription,
   CardContent,
-  Input,
+  CustomInput,
   Textarea,
   Button,
 } from '../ui';
@@ -32,27 +32,25 @@ export const ContactForm = () => {
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid gap-4 md:grid-cols-2">
-            <label className="text-card-foreground mb-2 block text-sm font-medium">
-              Nombre
-              <Input
-                name="name"
-                type="text"
-                autoComplete="given-name"
-                placeholder="Tu nombre completo"
-                className="bg-input border-border mt-2"
-              />
-            </label>
+            <CustomInput
+              required
+              id="name"
+              name="name"
+              label="Nombre"
+              autoComplete="given-name"
+              placeholder="Tu nombre"
+              type="text"
+            />
 
-            <label className="text-card-foreground mb-2 block text-sm font-medium">
-              Teléfono
-              <Input
-                name="phone"
-                autoComplete="tel"
-                type="tel"
-                placeholder="Tu número de teléfono"
-                className="bg-input border-border mt-2"
-              />
-            </label>
+            <CustomInput
+              required
+              id="last-name"
+              name="last-name"
+              label="Apellido"
+              autoComplete="family-name"
+              placeholder="Tu apellido"
+              type="text"
+            />
           </div>
 
           <label className="text-card-foreground mb-2 block text-sm font-medium">

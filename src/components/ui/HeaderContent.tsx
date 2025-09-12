@@ -22,9 +22,11 @@ export const HeaderContent = () => {
         <CustomList listInfo={navContent} itemStyle="text-foreground" />
       </nav>
 
-      <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-        Agendar Cita
-      </Button>
+      <a href="#contacto">
+        <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+          Agendar Cita
+        </Button>
+      </a>
     </div>
   );
 };

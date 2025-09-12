@@ -45,8 +45,8 @@ export const videos = [
 
   {
     id: crypto.randomUUID(),
-    title: 'Vídeo desconocido',
-    description: '😶',
+    title: 'Esterilización dental',
+    description: 'Tu salud primero, con equipos 100% esterilizados.',
     src: unknownVideo,
   },
 ];

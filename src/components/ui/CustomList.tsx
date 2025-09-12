@@ -23,6 +23,7 @@ export const CustomList = ({
           <li key={i}>
             <a
               href={item.link}
+              target={item.link.includes('http') ? '_blank' : '_self'}
               className={cn(
                 'text-background/80 hover:text-primary transition-colors',
                 itemStyle

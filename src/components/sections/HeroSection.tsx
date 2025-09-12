@@ -24,19 +24,23 @@ export const HeroSection = () => {
         </p>
 
         <div className="flex flex-col justify-center gap-4 sm:flex-row">
-          <Button
-            size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground"
-          >
-            Agendar Consulta
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-          >
-            Conocer Servicios
-          </Button>
+          <a href="#contacto">
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground"
+            >
+              Agendar Consulta
+            </Button>
+          </a>
+          <a href="#servicios">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+            >
+              Conocer Servicios
+            </Button>
+          </a>
         </div>
       </motion.div>
     </section>

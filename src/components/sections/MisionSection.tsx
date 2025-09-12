@@ -57,12 +57,14 @@ export const MisionSection = () => {
               </ul>
             </div>
 
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground"
-            >
-              Conoce Más Sobre Nosotros
-            </Button>
+            <a href="#nosotros">
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              >
+                Conoce Más Sobre Nosotros
+              </Button>
+            </a>
           </motion.div>
         </div>
       </div>

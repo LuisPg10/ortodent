@@ -1,13 +1,16 @@
 import type { FormEvent } from 'react';
+import { servicesSectionContent } from '@/data/sections/services-section-content';
+
 import {
+  Button,
   Card,
+  CardContent,
+  CardDescription,
   CardHeader,
   CardTitle,
-  CardDescription,
-  CardContent,
   CustomInput,
+  Options,
   Textarea,
-  Button,
 } from '../ui';
 
 export const ContactForm = () => {
@@ -52,6 +55,17 @@ export const ContactForm = () => {
               type="text"
             />
           </div>
+
+          <Options
+            id="service"
+            label="Servicio de interés"
+            defaultOption="Seleccione un servicio"
+            required
+          >
+            {servicesSectionContent.map(({ title }, i) => (
+              <option key={i}>{title}</option>
+            ))}
+          </Options>
 
           <label className="text-card-foreground mb-2 block text-sm font-medium">
             Mensaje

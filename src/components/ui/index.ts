@@ -4,6 +4,7 @@ export * from './carousel';
 export * from './CustomInput';
 export * from './HeaderContent';
 export * from './input';
+export * from './Options';
 export * from './PinterestGallery';
 export * from './textarea';
 export * from './VideoCard';

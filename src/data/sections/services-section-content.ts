@@ -17,14 +17,14 @@ export const servicesSectionContent = [
 
   {
     icon: Star,
-    title: 'Implantes Dentales',
+    title: 'Implantes dentales',
     description:
       'Reemplazo de dientes perdidos con implantes de titanio de alta calidad y durabilidad.',
   },
 
   {
     icon: Smile,
-    title: 'Estética Dental',
+    title: 'Estética dental',
     description:
       'Blanqueamientos, carillas y tratamientos para mejorar la apariencia de tu sonrisa.',
   },

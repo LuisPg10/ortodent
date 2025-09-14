@@ -3,7 +3,7 @@ import conventionalBrackets from '../../assets/videos/conventional-brackets.webm
 import conventionalBracketsTwo from '../../assets/videos/convencional-brackets-two.webm';
 import dentalWhiteningProcess from '../../assets/videos/dental-whitening-process.webm';
 import dentalWhiteningResult from '../../assets/videos/dental-whitening-result.webm';
-import unknownVideo from '../../assets/videos/unknown-video.webm';
+import dentalSterilization from '../../assets/videos/dental-sterilization.webm';
 
 export const videos = [
   {
@@ -47,6 +47,6 @@ export const videos = [
     id: crypto.randomUUID(),
     title: 'Esterilización dental',
     description: 'Tu salud primero, con equipos 100% esterilizados.',
-    src: unknownVideo,
+    src: dentalSterilization,
   },
 ];

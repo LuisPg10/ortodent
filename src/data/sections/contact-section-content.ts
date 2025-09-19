@@ -5,13 +5,15 @@ export const contactInformationContent: ContactInformation[] = [
   {
     icon: MapPin,
     title: 'Dirección',
-    content: ['Calle 123, Ciudad, Pais'],
+    content: [
+      'Av. Gregorio Méndez Magaña 3217, Atasta de Serra, 86100 Villahermosa, Tabasco, México',
+    ],
   },
 
   {
     icon: Phone,
     title: 'Teléfono',
-    content: ['+1 123 456 789'],
+    content: ['+52 1 993 370 9871'],
   },
 
   {
@@ -24,9 +26,9 @@ export const contactInformationContent: ContactInformation[] = [
     icon: Clock,
     title: 'Horarios',
     content: [
-      'Lunes - Viernes: 9:00 AM - 7:00 PM',
-      'Sábados: 9:00 AM - 2:00 PM',
-      'Domingos: Cerrado',
+      'Lunes y Jueves: 3:00 PM - 8:00 PM',
+      'Martes, Viernes y Sábados: 9:00 AM - 3:00 PM',
+      'Miércoles: 9:00 AM - 8:00 PM',
     ],
   },
 ];

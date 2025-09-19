@@ -7,7 +7,7 @@ import { OrtodentIcon } from '../ui/OrtodentIcon';
 export const FooterInfo = () => {
   return (
     <div className="container mx-auto px-4">
-      <div className="flex flex-wrap gap-10 lg:gap-24">
+      <div className="flex flex-col flex-wrap gap-10 sm:flex-row lg:gap-24">
         <div className="max-w-sm">
           <OrtodentIcon style="dark" className="space-x-2" />
         </div>

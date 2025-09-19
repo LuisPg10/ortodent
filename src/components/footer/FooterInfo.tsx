@@ -2,19 +2,14 @@ import { navContent } from '@/data/nav-content';
 import { socialNetwork } from '@/data/social-media';
 
 import { CustomList } from '../ui/CustomList';
+import { OrtodentIcon } from '../ui/OrtodentIcon';
 
 export const FooterInfo = () => {
   return (
     <div className="container mx-auto px-4">
       <div className="flex flex-wrap gap-10 lg:gap-24">
         <div className="max-w-sm">
-          <div className="mb-4 flex items-center space-x-2">
-            <p className="font-serif text-xl font-bold">Ortodent</p>
-          </div>
-          <p className="text-background/80 mb-4">
-            Cuidamos tu sonrisa con excelencia profesional y tecnología de
-            vanguardia.
-          </p>
+          <OrtodentIcon style="dark" className="space-x-2" />
         </div>
 
         <CustomList

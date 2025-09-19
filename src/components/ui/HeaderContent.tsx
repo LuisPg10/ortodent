@@ -1,21 +1,13 @@
 import { navContent } from '@/data/nav-content';
-import logoOrtodent from '../../assets/images/logo-ortodent.webp';
 
 import { Button } from './button';
 import { CustomList } from './CustomList';
+import { OrtodentIcon } from './OrtodentIcon';
 
 export const HeaderContent = () => {
   return (
     <div className="container mx-auto flex items-center justify-between px-4 py-4">
-      <div className="flex items-center space-x-1">
-        <div className="flex h-8 w-8 items-center justify-center rounded-full">
-          <img src={logoOrtodent} alt="Logo de la empresa Ortodent" />
-        </div>
-
-        <h1 className="text-foreground font-serif text-xl font-bold">
-          Ortodent
-        </h1>
-      </div>
+      <OrtodentIcon />
 
       <nav className="hidden space-x-6 md:flex">
         <CustomList listInfo={navContent} itemStyle="text-foreground" />

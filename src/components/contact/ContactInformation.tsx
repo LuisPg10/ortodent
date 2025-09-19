@@ -18,7 +18,7 @@ export const ContactInformation = () => {
 
                 <div className="text-muted-foreground space-y-1">
                   {info.content.map((item, i) => (
-                    <p className="w-sm" key={i}>
+                    <p className="max-w-sm" key={i}>
                       {item}
                     </p>
                   ))}

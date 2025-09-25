@@ -45,6 +45,7 @@ export const PinterestGallery = ({
                 src={src}
                 alt={alt}
                 className="h-50 w-full object-cover sm:h-72"
+                loading="lazy"
               />
             </motion.div>
           ))}

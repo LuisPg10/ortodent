@@ -37,6 +37,7 @@ export const VideoCard = ({
         className="h-full w-full object-cover"
         loop
         muted
+        preload="auto"
       >
         <source src={src} type="video/webm" />
         Este video no es compatible con tu navegador

@@ -15,6 +15,7 @@ export const Dentist = ({ dentist }: Props) => {
           src={dentist.image}
           alt={dentist.name}
           className="w-full rounded-lg shadow-lg"
+          loading="lazy"
         />
       </div>
 

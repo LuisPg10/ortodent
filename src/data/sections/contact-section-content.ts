@@ -19,7 +19,7 @@ export const contactInformationContent: ContactInformation[] = [
   {
     icon: Mail,
     title: 'Correo',
-    content: ['info@ortodent.com'],
+    content: ['citas@ortodent.care'],
   },
 
   {

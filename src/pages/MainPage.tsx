@@ -30,7 +30,7 @@ export const MainPage = () => {
         <ContactSection />
       </main>
 
-      <footer className="bg-foreground text-background py-12">
+      <footer className="bg-foreground text-background pt-12 pb-5">
         <FooterInfo />
       </footer>
     </div>

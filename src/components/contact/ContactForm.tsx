@@ -12,7 +12,7 @@ import {
   Options,
   Textarea,
 } from '../ui';
-import { contactFormErrors } from '@/errors/contact-form-erros';
+import { contactFormErrors } from '@/errors/contact-form-errors';
 
 export const ContactForm = () => {
   const { errors, onFormSubmit, register } = useContactForm();

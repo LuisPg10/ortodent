@@ -8,11 +8,11 @@ import dentalWhitening from '../../assets/images/dental-whitening.webp';
 export const misionImageGallery: ImageGalleryItem[] = [
   {
     src: andymv,
-    alt: 'Paciente de ortodent disfrutando de su sonrisa en una fiesta',
+    alt: 'Paciente de Ortodent disfrutando de su sonrisa en una fiesta',
   },
   {
     src: tartinationTreatment,
-    alt: 'Paciente de ortodent mostrando la felicidad en el ejercicio con su brillante sonrisa',
+    alt: 'Paciente de Ortodent mostrando la felicidad en el ejercicio con su brillante sonrisa',
   },
   {
     src: dentalWhitening,
@@ -25,7 +25,7 @@ export const misionImageGallery: ImageGalleryItem[] = [
 ];
 
 export const compromises: string[] = [
-  ' Atención personalizada para cada paciente',
+  'Atención personalizada para cada paciente',
   'Tecnología de vanguardia en todos nuestros tratamientos',
   'Ambiente cálido y profesional para tu tranquilidad',
   'Resultados duraderos que superan tus expectativas',

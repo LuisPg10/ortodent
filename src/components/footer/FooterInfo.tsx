@@ -26,7 +26,7 @@ export const FooterInfo = () => {
         <div className="flex flex-col items-center gap-2 sm:flex-row">
           <img
             src={logoCofepris}
-            alt="Logo de cofepris"
+            alt="Logo de COFEPRIS"
             className="h-7 w-auto shrink-0 object-contain sm:h-8"
           />
           <span

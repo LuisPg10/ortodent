@@ -26,8 +26,8 @@ export const contactInformationContent: ContactInformation[] = [
     icon: Clock,
     title: 'Horarios',
     content: [
-      'Lunes y Jueves: 3:00 PM - 8:00 PM',
-      'Martes, Viernes y Sábados: 9:00 AM - 3:00 PM',
+      'Lunes y jueves: 3:00 PM - 8:00 PM',
+      'Martes, viernes y sábados: 9:00 AM - 3:00 PM',
       'Miércoles: 9:00 AM - 8:00 PM',
     ],
   },

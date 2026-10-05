@@ -3,6 +3,6 @@ export const enum InterestDentistryService {
   Orthodontics = 'Ortodoncia',
   DentalImplants = 'Implantes dentales',
   DentalAesthetics = 'Estética dental',
-  EdiatricOdont = 'Endodoncia',
+  Endodontics = 'Endodoncia',
   Periodontics = 'Periodoncia',
 }

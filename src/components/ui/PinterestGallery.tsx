@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import type { ImageGalleryItem } from '@/types/image-gallery-item';
 
-import { createMansoryGrid } from '@/lib/create-mansory-grid';
+import { createMasonryGrid } from '@/lib/create-masonry-grid';
 
 interface Props {
   columns?: number;
@@ -14,7 +14,7 @@ export const PinterestGallery = ({
   images,
   imagesPerColumns = 2,
 }: Props) => {
-  const distributedImages = createMansoryGrid(
+  const distributedImages = createMasonryGrid(
     images,
     columns,
     imagesPerColumns
